@@ -1,17 +1,29 @@
+
+.title
+{
+    font-size: xx-large;
+    text-align: center;
+}
+
+#container
+{
+    margin-top: 30px;
+}
+
 .grid-element
 {
     border-color: black;
     border: 1px;
     border-style: solid;
-    margin: 1px;
-    padding: 2px;
-    width: 10px;
-    height: 10px;
+    padding: 1px;
+    width: 20px;
+    height: 20px;
 }
 
 .row-container
 {
     display: flex;
+    justify-content: center;
 }
 
 .change-background-color

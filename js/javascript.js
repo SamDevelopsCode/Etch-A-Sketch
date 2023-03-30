@@ -4,9 +4,9 @@ const gridContainer = document.getElementById("container");
 
 function createGrids()
 {
-    for (let i = 0; i < 3200; i++) 
+    for (let i = 0; i < 256; i++) 
     {
-        if ((i % 64) == 0)
+        if ((i % 16) == 0)
         {
             var rowContainer = document.createElement("div");
             rowContainer.classList.add("row-container");
