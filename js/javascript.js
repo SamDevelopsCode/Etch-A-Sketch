@@ -1,12 +1,14 @@
-const gridContainer = document.getElementById("container");
+const headerContainer = document.querySelector(".header-container");
+const gridContainer = document.getElementById("grid-container");
+
+let squareGridsPerSide = 40;
 
 
-
-function createGrids()
+function createGrid()
 {
-    for (let i = 0; i < 256; i++) 
+    for (let i = 0; i < Math.pow(squareGridsPerSide, 2); i++) 
     {
-        if ((i % 16) == 0)
+        if ((i % squareGridsPerSide) == 0)
         {
             var rowContainer = document.createElement("div");
             rowContainer.classList.add("row-container");
@@ -17,7 +19,9 @@ function createGrids()
         div.classList.add("grid-element");
         rowContainer.appendChild(div);
     }
+    assignEventsToGridElements();
 }
+
 
 function assignEventsToGridElements()
 {
@@ -27,11 +31,36 @@ function assignEventsToGridElements()
         gridElement.addEventListener("mouseover", () => {
             gridElement.classList.add("change-background-color");
         });
-    });
-
-    // we use the .forEach method to iterate through each
-    
+    });    
 }
 
-createGrids();
-assignEventsToGridElements();
+
+function createNewGrid()
+{
+    createGrid();
+
+    var button = document.createElement("button");   
+    button.textContent = "New Grid";
+    headerContainer.appendChild(button);
+    button.addEventListener("click", () => 
+    {
+    squareGridsPerSide = prompt("Enter the number of squares per side", "16");    
+    if (squareGridsPerSide > 100)
+    {
+        squareGridsPerSide = 100;
+    }
+    resetGridToDefault();
+    createGrid();
+    })    
+}
+
+
+function resetGridToDefault()
+{
+    while (gridContainer.firstChild)
+    {
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+}
+
+createNewGrid();
