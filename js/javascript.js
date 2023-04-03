@@ -51,7 +51,7 @@ function createNewGridButton()
     button.addEventListener("click", () => 
     {
     squaresPerSide = prompt("Enter the number of squares per side", "16");   
-    console.log(squaresPerSide);
+
     if (squaresPerSide > 100)
     {
         squaresPerSide = 100;
