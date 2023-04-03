@@ -50,7 +50,7 @@ function createNewGridButton()
 
     button.addEventListener("click", () => 
     {
-    squaresPerSide = prompt("Enter the number of squares per side", "16");   
+    squaresPerSide = prompt("Enter 1-100", "16");   
 
     if (squaresPerSide > 100)
     {

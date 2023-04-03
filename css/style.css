@@ -35,6 +35,8 @@ button
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 50px solid red;
+
 }
 
 .row-container
@@ -46,7 +48,6 @@ button
 
 .grid-element
 {
-    border: 1px solid black;
     padding: 1px;
     flex: 1;
 }
