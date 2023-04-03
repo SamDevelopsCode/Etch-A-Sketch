@@ -9,15 +9,10 @@ button
 {
     width: 150px;
     height: 40px;
-    content: "New Grid";
     font-size: 32px;
     margin-top: 16px;
 }
 
-#grid-container
-{
-    margin-top: 30px;
-}
 
 .header-container
 {
@@ -26,20 +21,34 @@ button
     align-items: center;
 }
 
-.grid-element
+.grid-container-parent
 {
-    border-color: black;
-    border: 1px;
-    border-style: solid;
-    padding: 1px;
-    width: 5px;
-    height: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#grid-container
+{
+    margin-top: 30px;
+    width: 750px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .row-container
 {
     display: flex;
+    flex-grow: 1;
     justify-content: center;
+}
+
+.grid-element
+{
+    border: 1px solid black;
+    padding: 1px;
+    flex: 1;
 }
 
 .change-background-color
